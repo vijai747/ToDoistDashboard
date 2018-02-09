@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>todoist.api &mdash; todoist-python 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="todoist-python 1.0 documentation" href="index.html"/>
+        <link rel="up" title="todoist" href="modules.html"/>
+        <link rel="next" title="todoist.models" href="models.html"/>
+        <link rel="prev" title="todoist" href="modules.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> todoist-python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">todoist</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">todoist.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">todoist.models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managers.html">todoist.managers</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">todoist-python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">todoist</a> &raquo;</li>
+        
+      <li>todoist.api</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/todoist.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-todoist.api">
+<span id="todoist-api"></span><h1>todoist.api<a class="headerlink" href="#module-todoist.api" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="todoist.api.SyncError">
+<em class="property">exception </em><code class="descclassname">todoist.api.</code><code class="descname">SyncError</code><a class="reference internal" href="_modules/todoist/api.html#SyncError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.SyncError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="todoist.api.TodoistAPI">
+<em class="property">class </em><code class="descclassname">todoist.api.</code><code class="descname">TodoistAPI</code><span class="sig-paren">(</span><em>token=''</em>, <em>api_endpoint='https://todoist.com'</em>, <em>session=None</em>, <em>cache='~/.todoist-sync/'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements the API that makes it possible to interact with a Todoist user
+account and its data.</p>
+<dl class="classmethod">
+<dt id="todoist.api.TodoistAPI.deserialize">
+<em class="property">classmethod </em><code class="descname">deserialize</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.reset_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.serialize">
+<code class="descname">serialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.serialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.serialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.get_api_url">
+<code class="descname">get_api_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.get_api_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.get_api_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.generate_uuid">
+<code class="descname">generate_uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.generate_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.generate_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a uuid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.sync">
+<code class="descname">sync</code><span class="sig-paren">(</span><em>commands=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.sync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends to the server the changes that were made locally, and also
+fetches the latest updated data from the server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><em>raise_on_error=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.commit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commits all requests that are queued.  Note that, without calling this
+method none of the changes that are made to the objects are actually
+synchronized to the server, unless one of the aforementioned Sync API
+calls are called directly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>queries</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs date queries and other searches, and returns the results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="todoist.api.TodoistAPI.add_item">
+<code class="descname">add_item</code><span class="sig-paren">(</span><em>content</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#TodoistAPI.add_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.TodoistAPI.add_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="todoist.api.state_default">
+<code class="descclassname">todoist.api.</code><code class="descname">state_default</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#state_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.state_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="todoist.api.json_default">
+<code class="descclassname">todoist.api.</code><code class="descname">json_default</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/todoist/api.html#json_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#todoist.api.json_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.html" class="btn btn-neutral float-right" title="todoist.models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral" title="todoist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Doist.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
