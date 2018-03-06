@@ -28,6 +28,7 @@ Navigate to Jupyter Notebook to view analysis
 You can find out your token from the Todoist Web app, at Todoist Settings -> Account -> API token.
 
 Open data_download_projects.py and insert your token value into the variable 'MyToken'
+
 Open data_download_items.py and insert your token value into the variable 'MyToken'
 
 Run both files to generate a csv file with your personal data:
