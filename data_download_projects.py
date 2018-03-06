@@ -3,7 +3,7 @@ from todoist.api import TodoistAPI
 
 myToken = '6de0c48443150c63ac197ac8fb141a00e471eb03'
 api = TodoistAPI(myToken)
-
+api.sync()
 # print(api.state['projects'][1:3])
 
 ##### Function List #####
@@ -34,6 +34,7 @@ def parseProjectData(sourceProjectData, idList, projectList, colorList, parentId
 
 ##### Create Project Table #####
 
+# currentProjectData = api.state['projects']
 currentProjectData = api.state['projects']
 archivedProjectData = api.projects.get_archived()
 
