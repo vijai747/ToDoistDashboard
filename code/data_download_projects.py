@@ -1,7 +1,7 @@
 import pandas as pd
 from todoist.api import TodoistAPI
 
-myToken = '6de0c48443150c63ac197ac8fb141a00e471eb03'
+myToken = 'PLACE TOKEN HERE'
 api = TodoistAPI(myToken)
 api.sync()
 # print(api.state['projects'][1:3])
