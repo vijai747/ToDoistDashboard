@@ -46,4 +46,7 @@ projectTable = pd.DataFrame({'id' : myId,
                              'color' : myColor }, index = myProjects, dtype = 'int64')
 
 projectTable = projectTable[['id','color','parent_id']]
+projectTable.fillna('None', inplace=True)
+
+projectTable.to_csv('projectTable.csv')
 # print (projectTable)

@@ -65,6 +65,9 @@ itemTable = pd.DataFrame({'Project_Id' : projectId,
                           'Time' : None})
 
 itemTable = itemTable[['Project_Id', 'Project', 'Item_Id','Content', 'Date', 'Energy', 'Time']]
+itemTable.fillna('None', inplace=True)
+
+itemTable.to_csv('itemTable.csv')
 
 # print(itemTable.head(10))
 # print(itemTable.shape)
