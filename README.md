@@ -1,78 +1,40 @@
-# todoist-python - The official Todoist Python API library
-
 ## How to get started
 
 Requirements:
 
-* Python 2.7+
-* PIP: https://pypi.python.org/pypi/pip
-* Virtualenv: https://pypi.python.org/pypi/virtualenv
+* Python 3+
+* Anaconda: https://anaconda.org/anaconda/python
 
 Clone the repo and enter it:
 
-    $ git clone git@github.com:Doist/todoist-python.git ; cd todoist-python
+    $ git clone git@github.com:vijai747/ToDoistDashboard.git
+    $ cd ToDoistDashboard
 
 Create an environment:
 
-    $ virtualenv --system-site-packages -p /usr/bin/python2.7 Env
+    $ conda env create -f environment.yml
 
 Activate the environment:
 
-    $ source Env/bin/activate
+    $ source activate todoist
 
-Install the library along with all the dependencies (so far we depend on awesome
-requests only):
+Navigate to Jupyter Notebook to view analysis
 
+    $ cd code/
+    $ jupyter notebook
 
-    $ pip install -e .
+## Tailor analysis to your ToDoist Profile
 
+You can find out your token from the Todoist Web app, at Todoist Settings -> Account -> API token.
 
-If you want to build the documentation as well, install some extra packages:
+Open data_download_projects.py and insert your token value into the variable 'MyToken'
+Open data_download_items.py and insert your token value into the variable 'MyToken'
 
-    $ pip install -r doc/requirements.txt
+Run both files to generate a csv file with your personal data:
 
-Build the documentation:
+    $ python data_download_projects.py
+    $ python data_download_items.py
 
-    $ (cd doc ; make html)
+Reopen the Jupyter Notebook and re-run the entire kernel to update the tables and graph with your information.
 
-Read the built documentation by opening:
-
-    doc/_build/html/index.html
-
-Import the library and try some commands:
-
-```python
-$ python
->>> import todoist
->>> api = todoist.TodoistAPI()
->>> user = api.user.login('john.doe@gmail.com', 'secret')
->>> print(user['full_name'])
-John Doe
->>> response = api.sync()
->>> for project in response['projects']:
-...     print(project['name'])
-...
-Personal
-Shopping
-Work
-Errands
-Movies to watch
-```
-
-
-## Testing the library
-
-We have a set of tests to ensure we support Python both 2.x and 3.x.  To test
-it out, please make sure you have python 2.7 and python 3.4 installed in you
-system. Then install "tox" either globally (preferred way) or in your local
-environment.
-
-    # apt-get install python-tox
-
-or
-
-    $ pip install tox
-
-Then just type
-
-    $ tox
+Suggestions for improvement are welcome!
